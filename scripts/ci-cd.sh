@@ -30,6 +30,7 @@ function build() {
                 bazel build //iOS:Swordle
             else
                 bazel test //iOS/SwordleTests:SwordleTests
+                bazel test //iOS/SwordleUITests:SwordleUITests
             fi
         ;;
         "android")

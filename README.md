@@ -19,6 +19,12 @@ $ bazel build //iOS:Swordle
 #### Run Tests
 ```sh
 $ bazel test //iOS/SwordleTests:SwordleTests
+$ bazel test //iOS/SwordleUITests:SwordleUITests
+```
+
+#### Run UI Tests
+```sh
+$ bazel test //iOS/SwordleUITests:SwordleUITests
 ```
 
 ### Android
