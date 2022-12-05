@@ -1,0 +1,23 @@
+name: Android
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  Android:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+        
+    - name: Build
+      run: |
+        bash ${GITHUB_WORKSPACE}/scripts/ci-cd.sh android build
+
+    - name: Test
+      run: |
+        bash ${GITHUB_WORKSPACE}/scripts/ci-cd.sh android test
+
+    - name: Push 
+      run: |
+        echo "Here we would push the built app image to a server, tagged with ${{ github.sha }}, released internally for Q/A"
