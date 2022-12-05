@@ -6,6 +6,13 @@ This repo contains build instructions the iOS and Android Swordle applications, 
 
 ### iOS
 
+#### Build
+
 ```sh
 $ bazel build //iOS:Swordle
+```
+
+#### Run Tests
+```sh
+$ bazel test //iOS/SwordleTests:SwordleTests
 ```
