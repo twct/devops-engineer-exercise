@@ -1,0 +1,27 @@
+name: iOS
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: macos-12
+    steps:
+    - uses: actions/checkout@v2
+        
+    - name: Build
+      run: |
+        bash ${GITHUB_WORKSPACE}/scripts/ci-cd.sh ios build
+
+    - name: Test
+      run: |
+        bash ${GITHUB_WORKSPACE}/scripts/ci-cd.sh ios test
+
+    - name: Push 
+      run: |
+        echo "Here we would push the built app image to a server, tagged with ${{ github.sha }}"
+    
+    - name: Deploy to TestFlight
+      run: |
+        echo "Here we would deploy the app image to TestFlight, using the image pushed from the last step."
