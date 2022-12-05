@@ -1,0 +1,14 @@
+# iOS 
+
+build --ios_minimum_os=16.0
+build --ios_simulator_device="iPhone 14"
+build --ios_simulator_version=16.0
+build --xcode_version=14.0.0
+build --verbose_failures
+
+# Android
+
+build --define=android_dexmerger_tool=d8_dexmerger
+build --define=android_incremental_dexing_tool=d8_dexbuilder
+build --define=android_standalone_dexing_tool=d8_compat_dx
+build --nouse_workers_with_dexbuilder
